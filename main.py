@@ -28,7 +28,7 @@ def main():
     root_path = '/kw_resources/signate/signate_lemon_classification/data'
 
     img_path = osp.abspath(root_path + '/train_images/')
-    img_list = sorted(glob(osp.join(train_img_path, '*.jpg')))
+    img_list = sorted(glob(osp.join(img_path, '*.jpg')))
     #val_img_path = osp.abspath(root_path + '/test_images/')
     #val_img_list = sorted(glob(osp.join(val_img_path, '*.jpg')))
     num = len(img_list)
