@@ -55,8 +55,8 @@ def main():
     width = 448
     height = 448
 
-    train_dataset = Make_Dataset(train_img_list, lable_dic, DataTransform(width=width, height=height, color_mean=color_mean,color_std=color_std), phase='train')
-    val_dataset = Make_Dataset(val_img_list, lable_dic, DataTransform(width=width, height=height, color_mean=color_mean,color_std=color_std), phase='val')
+    train_dataset = Make_Dataset(train_img_list, label_dic, DataTransform(width=width, height=height, color_mean=color_mean,color_std=color_std), phase='train')
+    val_dataset = Make_Dataset(val_img_list, label_dic, DataTransform(width=width, height=height, color_mean=color_mean,color_std=color_std), phase='val')
     batchsize = 16
     train_loader=torch.utils.data.DataLoader(train_dataset,batch_size=batch_size,shuffle=True)
     val_loader=torch.utils.data.DataLoader(val_dataset,batch_size=1,shuffle=False)
