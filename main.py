@@ -47,7 +47,7 @@ def main():
         data = [row for row in reader]
 
     for i in range(len(data)):
-        label_dic[data[i]['id']] = data[i]['class_num']
+        label_dic[data[i]['id']] = int(data[i]['class_num'])
 
 
     color_mean = (0.5, 0.5, 0.5)
