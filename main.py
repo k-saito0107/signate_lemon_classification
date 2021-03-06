@@ -19,6 +19,7 @@ from glob import glob
 
 from utils.data_transform import DataTransform
 from utils.make_dataset import Make_Dataset
+from utils.train import train
 
 
 
