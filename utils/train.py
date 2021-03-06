@@ -35,7 +35,7 @@ def train(model, num_epochs,train_loader, val_loader):
     model.to(device)
     #model = nn.DataParallel(model)
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.SGD(model.parameters(), lr=0.0001, momentum=0.9)
+    optimizer = optim.Adam(model.parameters(), lr=0.0001)
     logs = []
 
     for epoch in range(1, num_epochs+1):
