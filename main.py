@@ -41,7 +41,7 @@ def main():
 
     csv_path = '/kw_resources/signate/signate_lemon_classification/data/train_images.csv'
     data = []
-    lable_dic = {}
+    label_dic = {}
     with open(csv_path, newline='', encoding='utf_8_sig') as f:
         reader = csv.DictReader(f)
         data = [row for row in reader]
