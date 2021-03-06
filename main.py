@@ -35,7 +35,7 @@ def main():
     theta = int(0.8 * num)
     random.shuffle(img_list)
     train_img_list = img_list[:theta]
-    val_img_list[theta:]
+    val_img_list = img_list[theta:]
     print(len(train_img_list))
     print(len(val_img_list))
 
