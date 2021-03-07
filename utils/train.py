@@ -35,7 +35,7 @@ def train(model, num_epochs,train_loader, val_loader):
                 if epoch == num_epochs:
                     break
     model.to(device)
-    #model = nn.DataParallel(model)
+    model = nn.DataParallel(model)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.0001)
     logs = []
@@ -100,7 +100,7 @@ def train(model, num_epochs,train_loader, val_loader):
             print('---------------------------------------------------------------')
             torch.save({
                 'epoch':epoch,
-                'model_state_dict':model.state_dict(),
+                'model_state_dict':model.module.state_dict(),
                 'logs':logs
             }, weights_path)
             #torch.save(model.module.state_dict(),weights_path)
