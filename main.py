@@ -52,25 +52,25 @@ def main():
 
     color_mean = (0.5, 0.5, 0.5)
     color_std = (0.5, 0.5, 0.5)
-    width = 448
-    height = 448
+    width = 640
+    height = 640
 
     train_dataset = Make_Dataset(train_img_list, label_dic, DataTransform(width=width, height=height, color_mean=color_mean,color_std=color_std), phase='train')
     val_dataset = Make_Dataset(val_img_list, label_dic, DataTransform(width=width, height=height, color_mean=color_mean,color_std=color_std), phase='val')
     batchsize = 16
     train_loader=torch.utils.data.DataLoader(train_dataset,batch_size=batchsize,shuffle=True)
     val_loader=torch.utils.data.DataLoader(val_dataset,batch_size=1,shuffle=False)
-    
+    '''
     model = EfficientNet.from_name('efficientnet-b6')
     num_ftrs = model._fc.in_features#全結合層の名前は"_fc"となっています
     model._fc = nn.Linear(num_ftrs, 4)
     '''
     #model
     use_pretrained = False
-    model = models.resnet50(pretrained=use_pretrained)
+    model = models.resnet101(pretrained=use_pretrained)
     #print(model)
     model.fc = nn.Linear(in_features=2048, out_features=4)
-    '''
+    
     num_epoch = 150
     up_model = train(model, num_epoch, train_loader, val_loader)
 

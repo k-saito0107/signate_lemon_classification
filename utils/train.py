@@ -21,7 +21,7 @@ def train(model, num_epochs,train_loader, val_loader):
     else:
         device = 'cpu'
     print(device)
-    weights_path = '/kw_resources/signate/signate_lemon_classification/weights/efficientnetb6_'+str(num_epochs)+'.pth'
+    weights_path = '/kw_resources/signate/signate_lemon_classification/weights/resnet101_'+str(num_epochs)+'.pth'
     log_path = '/kw_resources/signate/signate_lemon_classification/log_out.csv'
     #weights_path = './weights/efficientnetb4_'+str(num_epochs)+'.pth'
     #log_path = './log_out.csv'
