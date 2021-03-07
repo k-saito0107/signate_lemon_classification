@@ -61,7 +61,7 @@ def main():
     train_loader=torch.utils.data.DataLoader(train_dataset,batch_size=batchsize,shuffle=True)
     val_loader=torch.utils.data.DataLoader(val_dataset,batch_size=1,shuffle=False)
     
-    model = EfficientNet.from_pretrained('efficientnet-b6')
+    model = EfficientNet.from_pretrained('efficientnet-b4')
     num_ftrs = model._fc.in_features#全結合層の名前は"_fc"となっています
     model._fc = nn.Linear(num_ftrs, 4)
     '''
