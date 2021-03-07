@@ -12,8 +12,8 @@ class DataTransform():
                 Enhance(factor=[0.7, 1.3]),
                 Scale(scale=[1.0, 1.3]),
                 transforms.RandomAffine(degrees=(-10, 10)),
-                transforms.RandomHorizontalFlip(p=0.4),
-                transforms.RandomVerticalFlip(p=0.4),
+                transforms.RandomHorizontalFlip(p=0.5),
+                transforms.RandomVerticalFlip(p=0.5),
                 Normalize_Tensor(color_mean, color_std)
             ]),
             'val':Compose([

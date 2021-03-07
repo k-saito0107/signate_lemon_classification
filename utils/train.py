@@ -23,6 +23,8 @@ def train(model, num_epochs,train_loader, val_loader):
     print(device)
     weights_path = '/kw_resources/signate/signate_lemon_classification/weights/resnet_'+str(num_epochs)+'.pth'
     log_path = '/kw_resources/signate/signate_lemon_classification/log_out.csv'
+    #weights_path = './weights/efficientnetb4_'+str(num_epochs)+'.pth'
+    #log_path = './log_out.csv'
     for epoch in range(1, num_epochs+1):
         if epoch == 1:
             if os.path.exists(weights_path):

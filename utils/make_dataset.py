@@ -20,8 +20,9 @@ class Make_Dataset(data.Dataset):
         img_file_path = self.img_path[index]
         img = Image.open(img_file_path)
         img = self.img_transform(self.phase, img)
+        #print(img_file_path)
 
-        img_name = img_file_path.split('/')[6]
+        img_name = img_file_path.split('/')[-1]
         label = self.label_dict[img_name]
 
         return img, label
