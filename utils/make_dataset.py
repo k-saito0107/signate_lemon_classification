@@ -24,6 +24,7 @@ class Make_Dataset(data.Dataset):
 
         img_name = img_file_path.split('/')[-1]
         label = self.label_dict[img_name]
+        print(label)
 
         return img, label
     
